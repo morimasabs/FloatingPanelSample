@@ -19,8 +19,6 @@ class ViewController: UIViewController, FloatingPanelControllerDelegate {
         // Initialize a `FloatingPanelController` object.
         fpc = FloatingPanelController()
         
-        fpc.contentMode = .fitToBounds
-
         // Assign self as the delegate of the controller.
         fpc.delegate = self // Optional
 
