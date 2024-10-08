@@ -18,6 +18,8 @@ class ViewController: UIViewController, FloatingPanelControllerDelegate {
         
         // Initialize a `FloatingPanelController` object.
         fpc = FloatingPanelController()
+        
+        fpc.contentMode = .fitToBounds
 
         // Assign self as the delegate of the controller.
         fpc.delegate = self // Optional
@@ -27,9 +29,14 @@ class ViewController: UIViewController, FloatingPanelControllerDelegate {
         fpc.set(contentViewController: contentVC)
 
         // Track a scroll view(or the siblings) in the content view controller.
-        fpc.track(scrollView: contentVC.tableView)
+        fpc.track(scrollView: contentVC.scrollView)
 
         // Add and show the views managed by the `FloatingPanelController` object to self.view.
         fpc.addPanel(toParent: self)
     }
+}
+
+
+#Preview {
+    ViewController()
 }
